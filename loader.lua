@@ -1,5 +1,5 @@
 local Games = {
-    10851599 = "rts"
+    [10851599] = "rts"
 }
 
 local Found = Games[game.PlaceId]
