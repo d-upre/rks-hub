@@ -18,7 +18,7 @@ local Remotes = ReplicatedStorage.Remotes
 -- Interface
 -----------------------------
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/topitbopit/dollarware/main/library.lua"))({theme="cherry", smoothDragging=false})
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/d-upre/rks-hub/refs/heads/main/assets/ui.lua"))({theme="cherry", smoothDragging=false})
 
 local Window = Library.newWindow({text="Roblox Talent Show"})
 
