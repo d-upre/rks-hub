@@ -26,7 +26,7 @@ do
 	do
 		local Anti = Main:addSection({text="Anti"})
 
-		Stage:addToggle({text="AntiCuff"}):bindToEvent("onToggle", function(Toggle)
+		Anti:addToggle({text="AntiCuff"}):bindToEvent("onToggle", function(Toggle)
 			if Toggle then
 				C1 = LocalPlayer:GetAttributeChangedSignal("Cuffed"):Connect(function()
 					local IsCuffed = LocalPlayer:GetAttribute("Cuffed")
@@ -47,12 +47,12 @@ do
 							Root.CFrame = Old
 						end)
 					end
-				else
-					C1:Disconnect()
-					C2:Disconnect()
-					C1 = nil
-					C2 = nil
 				end)
+			else
+				C1:Disconnect()
+				C2:Disconnect()
+				C1 = nil
+				C2 = nil
 			end
 		end)
 	end
