@@ -1,5 +1,6 @@
 local Games = {
-    [10851599] = "rts"
+    [10851599] = "rts",
+    [6022383883] = "mr"
 }
 
 local Id = game.PlaceId
