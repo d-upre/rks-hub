@@ -63,9 +63,6 @@ getgenv().fireclickdetector = function(CD)
 	end)
 end
 
-
-
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/d-upre/Dupre-Library/refs/heads/main/library.lua"))()
 
 local Players = game:GetService("Players")
@@ -194,7 +191,7 @@ local function Place(Name, Pos)
 	end)
 end
 
-local Root = Library:Init("Build A Boat")
+local Root = Library:Init("Pea Hub | Build A Boat")
 
 do
 	local Main = Root:Tab("Main")
