@@ -28,9 +28,9 @@ do
 
 	-- Section: Stage
 	do
-		local Stage = Main:Section("Stage")
+		local Bypasses = Main:Section("Bypasses")
 
-		Stage:Toggle("AntiWarp", function(Toggle)
+		Bypasses:Toggle("AntiWarp", function(Toggle)
 			if Toggle then
 				AntiWarp = true
 
@@ -78,7 +78,7 @@ do
 		end)
 
 		local Cache = {}
-		Stage:Toggle("Noclip", function(Toggle)
+		Bypasses:Toggle("Noclip", function(Toggle)
 			if Toggle then
 				Noclip = true
 				Cache = {}
@@ -123,6 +123,20 @@ do
 				end
 		
 				Cache = {}
+			end
+		end)
+
+		Bypasses:Toggle("AntiBanish", function(Toggle)
+			AntiBanish = Toggle
+			while AntiBanish do
+				task.wait()
+
+				local Char = LocalPlayer.Character
+				if not Char then
+					local New = LocalPlayer.Team.Name == "Auditioners" and "Audience" or "Auditioners"
+					Remotes.ChangeTeam:FireServer(New)
+					repeat task.wait() until LocalPlayer.Team.Name == New and LocalPlayer.Character
+				end
 			end
 		end)
 	end
