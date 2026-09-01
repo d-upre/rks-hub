@@ -18,19 +18,19 @@ local Remotes = ReplicatedStorage.Remotes
 -- Interface
 -----------------------------
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/d-upre/rks-hub/refs/heads/main/assets/ui.lua"))({theme="cherry", smoothDragging=false})
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ReliefScript/mogware/refs/heads/main/main.lua"))()
 
-local Window = Library.newWindow({text="Roblox Talent Show"})
+local Window = Library:Window("Roblox Talent Show")
 
 -- Tab: Main
 do
-	local Main = Window:addMenu({text="Main"})
+	local Main = Window:Tab("Main")
 
 	-- Section: Stage
 	do
-		local Stage = Main:addSection({text="Stage"})
+		local Stage = Main:Section("Stage")
 
-		Stage:addToggle({text="AntiWarp"}):bindToEvent("onToggle", function(Toggle)
+		Stage:Toggle("AntiWarp", function(Toggle)
 			if Toggle then
 				AntiWarp = true
 
@@ -78,7 +78,7 @@ do
 		end)
 
 		local Cache = {}
-		Stage:addToggle({text="Noclip"}):bindToEvent("onToggle", function(Toggle)
+		Stage:Toggle("Noclip", function(Toggle)
 			if Toggle then
 				Noclip = true
 				Cache = {}
@@ -130,16 +130,16 @@ end
 
 -- Tab: Farm
 do
-	local Farm = Window:addMenu({text="Farm"})
+	local Farm = Window:Tab("Farm")
 
 	-- Section: RepFarm
 	do
-		local RepFarm = Farm:addSection({text="RepFarm"})
+		local RepFarm = Farm:Section("RepFarm")
 
 		local Courses = workspace.ObstacleCourses
 		local Rep = LocalPlayer.leaderstats.Rep
 
-		RepFarm:addToggle({text="Enabled"}):bindToEvent("onToggle", function(Toggle)
+		RepFarm:Toggle("Enabled", function(Toggle)
 			if Toggle then
 				Farm = true
 
@@ -204,14 +204,14 @@ end
 
 -- Tab: Fun
 do
-	local Fun = Window:addMenu({text="Fun"})
+	local Fun = Window:Tab("Fun")
 
 	-- Section: Morphs
 	do
-		local Morphs = Fun:addSection({text="Morphs"})
+		local Morphs = Fun:Section("Morphs")
 
 		local MorphFolder = workspace.Morphs
-		Morphs:addToggle({text="MorphSpam"}):bindToEvent("onToggle", function(Toggle)
+		Morphs:Toggle("MorphSpam", function(Toggle)
 			if Toggle then
 				MorphSpam = true
 				while MorphSpam do
@@ -243,12 +243,12 @@ do
 
 	-- Section: QuickChatSpam
 	do
-		local QuickChat = Fun:addSection({text="QuickChatSpam"})
+		local QuickChat = Fun:Section("QuickChatSpam")
 
 		local QC = Remotes.QuickChat
 		local Option = "I dont love this performance"
 
-		QuickChat:addToggle({text="Enabled"}):bindToEvent("onToggle", function(Toggle)
+		QuickChat:Toggle("Enabled", function(Toggle)
 			QCS = Toggle
 			while QCS do
 				task.wait()
@@ -256,7 +256,7 @@ do
 			end
 		end)
 
-		QuickChat:addTextbox({text="Option"}):bindToEvent("onFocusLost", function(New)
+		QuickChat:TextBox("Option", function(New)
 			Option = New
 		end)
 	end
