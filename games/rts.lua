@@ -20,7 +20,7 @@ local Remotes = ReplicatedStorage.Remotes
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ReliefScript/mogware/refs/heads/main/main.lua"))()
 
-local Window = Library:Window("Roblox Talent Show")
+local Window = Library:Window("Pea Hub | Roblox Talent Show")
 
 -- Tab: Main
 do
