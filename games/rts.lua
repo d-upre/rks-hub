@@ -126,16 +126,15 @@ do
 			end
 		end)
 
-		Bypasses:Toggle("AntiBanish", function(Toggle)
+		Bypasses:Toggle("AntiServerHost", function(Toggle)
 			AntiBanish = Toggle
 			while AntiBanish do
 				task.wait()
 
 				local Char = LocalPlayer.Character
-				if not Char then
+				if not Char.Parent or Char:FindFirstChild("Adonis_Ice") then
 					local New = LocalPlayer.Team.Name == "Auditioners" and "Audience" or "Auditioners"
-					Remotes.ChangeTeam:FireServer(New)
-					repeat task.wait() until LocalPlayer.Team.Name == New and LocalPlayer.Character
+					repeat Remotes.ChangeTeam:FireServer(New) task.wait() until LocalPlayer.Team.Name == New and LocalPlayer.Character
 				end
 			end
 		end)
