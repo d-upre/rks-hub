@@ -18,7 +18,7 @@ local PlayerScripts = LocalPlayer:FindFirstChildOfClass("PlayerScripts")
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ReliefScript/mogware/refs/heads/main/main.lua"))()
 
-local Window = Library:Window("Military Roleplay")
+local Window = Library:Window("Pea Hub | Military Roleplay")
 
 -- Tab: Main
 do
