@@ -1,9 +1,10 @@
 local Games = {
     [10851599] = "rts",
-    [6022383883] = "mr"
+    [6022383883] = "mr",
+    [210851291] = "babft"
 }
 
-local Id = game.PlaceId
+local Id = game.GameId
 local Found = Games[Id]
 if Found then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/d-upre/rks-hub/refs/heads/main/games/"..Found..".lua"))()
