@@ -1,7 +1,8 @@
 local Games = {
     [12454828] = "rts",
     [2177157737] = "mr",
-    [210851291] = "babft"
+    [210851291] = "babft",
+    [604142934] = "freedraw"
 }
 
 local Id = game.GameId
